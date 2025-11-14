@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про фірму - Б'юті Експерт</title>
+</head>
+<body>
+    <header>
+        <h1>Б'юті Експерт</h1>
+        <nav>
+            <a href="about_author.html">Про автора</a> |
+            <a href="company.html">Про фірму</a> |
+            <a href="news.html">Новини</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Про нашу компанію</h2>
+            <p><strong>Б'юті Експерт</strong> - інноваційна компанія у сфері косметології, що пропонує:</p>
+            
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>Вид продукції</th>
+                    <th>Марка</th>
+                    <th>Виробник</th>
+                    <th>Термін придатності</th>
+                </tr>
+                <tr>
+                    <td>Натуральна косметика</td>
+                    <td>Organic Beauty</td>
+                    <td>Україна</td>
+                    <td>24 місяці</td>
+                </tr>
+                <tr>
+                    <td>Професійний догляд</td>
+                    <td>Elite Cosmetics</td>
+                    <td>Франція</td>
+                    <td>36 місяців</td>
+                </tr>
+                <tr>
+                    <td>Лікувальна косметика</td>
+                    <td>DermaCare</td>
+                    <td>Німеччина</td>
+                    <td>18 місяців</td>
+                </tr>
+            </table>
+
+            <h3>Наші переваги:</h3>
+            <ul>
+                <li>✅ Натуральні компоненти</li>
+                <li>✅ Клінічно перевірена ефективність</li>
+                <li>✅ Доступні ціни</li>
+                <li>✅ Консультації косметологів</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Б'юті Експерт. Всі права захищені.</p>
+    </footer>
+</body>
+</html> 
