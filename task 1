@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про автора - Б'юті Експерт</title>
+</head>
+<body>
+    <header>
+        <h1>Про автора проекту</h1>
+        <nav>
+            <a href="about_author.html">Про автора</a> |
+            <a href="company.html">Про фірму</a> |
+            <a href="news.html">Новини</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Анастасія Порфіряну</h2>
+            <img src="author_photo.jpg" alt="Фото автора" width="200">
+            <p><strong>Спеціалізація:</strong> Веб-розробка та дизайн</p>
+            <p><strong>Досвід:</strong> 2 роки у сфері IT</p>
+            <p><strong>Освіта:</strong> Студентка факультету комп'ютерних наук</p>
+            
+            <h3>Контактна інформація:</h3>
+            <ul>
+                <li>Email: porfiranunastiia@gmail.com</li>
+                <li>Телефон: +38 (099) 123-45-67</li>
+                <li>Соціальні мережі: 
+                    <a href="#">Instagram</a>, 
+                    <a href="#">LinkedIn</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Всі права захищені.</p>
+    </footer>
+</body>
+</html>
