@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Solutions - Меню</title>
+    <link rel="stylesheet" href="styles.css" class="main-stylesheet" media="screen" title="Основні стилі">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul compact="compact" title="Основна навігація" class="nav-list">
+            <li type="disc" title="Головна сторінка" class="nav-item" value="1">
+                <a href="index.html" accesskey="h" type="text/html" id="home-link-menu">Головна</a>
+            </li>
+            <li type="disc" title="Меню сайту" class="nav-item" value="2">
+                <a href="menu.html" accesskey="m" type="text/html" id="current-menu-link">Меню</a>
+            </li>
+            <li type="disc" title="CSS демонстрація" class="nav-item" value="3">
+                <a href="css-demo.html" accesskey="c" type="text/html" id="css-link-menu" download="css-demo.html">CSS Демо</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Меню Web-проекту IT Solutions</h1>
+    </header>
+
+    <main class="content">
+        <section class="menu-section">
+            <h2>Основні розділи проекту</h2>
+            
+            <menu class="project-menu" id="project-main-menu">
+                <menuitem id="main-page-item" class="menu-main">
+                    <a href="index.html#company-info" accesskey="a" type="text/html">Про компанію</a>
+                </menuitem>
+                <menuitem id="services-item" class="menu-main">
+                    <a href="index.html#services-list" accesskey="s" type="text/html">Наші послуги</a>
+                </menuitem>
+                <menuitem id="tech-item" class="menu-main">
+                    <a href="index.html#tech-definitions" accesskey="t" type="text/html">Технології</a>
+                </menuitem>
+            </menu>
+        </section>
+
+        <section class="internal-links">
+            <h2>Внутрішні посилання на головній сторінці</h2>
+            
+            <ol type="I" style="list-style-type: upper-roman;" id="internal-links-list" class="internal-list" lang="uk">
+                <li type="I" title="Розділ послуг" class="internal-item" value="1">
+                    <a href="index.html#services-list" accesskey="1" coords="0,0,200,30" rev="section" type="text/html">
+                        Список послуг компанії
+                    </a>
+                </li>
+                <li type="I" title="Технології" class="internal-item" value="2">
+                    <a href="index.html#tech-definitions" accesskey="2" coords="0,31,200,60" rev="section" type="text/html">
+                        Визначення технологій
+                    </a>
+                </li>
+                <li type="I" title="Переваги" class="internal-item" value="3">
+                    <a href="index.html#main-menu" accesskey="3" coords="0,61,200,90" rev="section" type="text/html">
+                        Наші переваги
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <section class="external-links">
+            <h2>Зовнішні сторінки проекту</h2>
+            
+            <ul compact="compact" title="Зовнішні ресурси" class="external-list">
+                <li type="disc" title="CSS демонстрація" class="external-item" value="1">
+                    <a href="css-demo.html" accesskey="d" type="text/html" id="demo-download" download="css-demo.html">
+                        Сторінка демонстрації CSS (можна завантажити)
+                    </a>
+                </li>
+                <li type="disc" title="Головна сторінка" class="external-item" value="2">
+                    <a href="index.html" accesskey="g" type="text/html">
+                        Повернутися на головну сторінку
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="quick-nav">
+            <h2>Швидка навігація</h2>
+            
+            <dl dir="ltr" id="nav-definitions" title="Визначення розділів">
+                <dt>Головна сторінка</dt>
+                <dd title="Основна інформація" style="margin-bottom: 15px;">
+                    <a href="index.html" accesskey="h" type="text/html">Перейти до головної сторінки</a> - основна інформація про компанію та послуги
+                </dd>
+                
+                <dt>CSS Демонстрація</dt>
+                <dd title="Технічна сторінка" style="margin-bottom: 15px;">
+                    <a href="css-demo.html" accesskey="c" type="text/html">Перейти до CSS демонстрації</a> - технічна сторінка з прикладами стилів
+                </dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <bd class="footer-highlight">IT Solutions - якість та інновації!</bd>
+        <p>&copy; 2024 IT Solutions. Всі права захищені.</p>
+        <nobr class="footer-contacts">Контакти: info@itsolutions.com | +380 (XX) XXX-XX-XX</nobr>
+    </footer>
+</body>
+</html>
