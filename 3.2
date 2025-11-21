@@ -1,0 +1,101 @@
+/* Додаю стилі для нових елементів з лабораторної №3 */
+
+/* Стилі для списків */
+.nav-list, .sub-list, .external-list {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.numbered-list {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+}
+
+.internal-list {
+    background-color: #e8f4f8;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Стилі для меню */
+.advantages-menu, .project-menu, .css-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.menu-advantage, .menu-main, .css-menu-item {
+    padding: 8px 12px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Стилі для marquee */
+marquee {
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+    color: white;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+/* Стилі для bd та nobr */
+.highlight-text, .footer-highlight, .demo-highlight {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.company-name, .footer-contacts {
+    color: #2c3e50;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Стилі для посилань з специфічними атрибутами */
+a[download] {
+    background-color: #27ae60;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+a[accesskey] {
+    border-bottom: 1px dotted #3498db;
+}
+
+/* Додаткові стилі для визначень */
+dl[title] {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+dt {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+    }
+    
+    marquee {
+        font-size: 0.9em;
+    }
+}
