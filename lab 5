@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №5: Форми та Валідація (Варіант 9)</title>
+    
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        form { background: white; padding: 30px; border-radius: 8px; max-width: 600px; margin: 20px auto; }
+        fieldset { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; }
+        legend { font-size: 1.2em; font-weight: bold; color: #333; }
+        label { display: block; margin-bottom: 5px; font-weight: 500; }
+        input[type="text"], input[type="tel"], input[type="password"], input[type="search"],
+        input[type="month"], input[type="datetime-local"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* Стиль для кнопки-зображення */
+        input[type="image"] {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        .form-row { display: flex; gap: 20px; }
+        .form-row > div { flex: 1; }
+    </style>
+</head>
+
+<body dir="ltr">
+
+    <h1>Форма замовлення товарів (Фірма "Техно-Прогрес")</h1>
+
+    <form action="#" method="post" dir="ltr" enctype="multipart/form-data" novalidate accept-charset="UTF-8">
+
+        <fieldset>
+            <legend class="info-legend" id="product-info-legend" title="Інформація про товар">Інформація про товар</legend>
+            
+            <details style="border-left: 3px solid #007bff; padding-left: 10px;" title="Опис продукту" open>
+                <summary>Опис продукту "Сервер D-500"</summary>
+                <p>Потужний сервер для дата-центрів. Вимагає обов'язкового заповнення всіх полів форми.</p>
+            </details>
+        </fieldset>
+
+        <fieldset>
+            <legend>Дані замовника</legend>
+            
+            <div>
+                <label for="client-name" id="label-name" class="label-style">ПІБ (Обов'язково):</label>
+                <input type="text" id="client-name" name="client_name" list="suggested_names" required 
+                       title="Введіть повне ім'я">
+                
+                <datalist id="suggested_names" dir="ltr" lang="uk">
+                    <option value="Іваненко Іван"></option>
+                    <option value="Петренко Петро"></option>
+                </datalist>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="client-tel">Телефон (Формат: 0xx-xxx-xx-xx):</label>
+                    <input type="tel" id="client-tel" name="client_tel" required pattern="0[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" 
+                           title="Номер має відповідати формату 0xx-xxx-xx-xx" step="1">
+                </div>
+                <div>
+                    <label for="client-pass">Пароль доступу (max 8):</label>
+                    <input type="password" id="client-pass" name="client_pass" max="8">
+                </div>
+            </div>
+            
+            <div>
+                <label for="product-search">Пошук товарів:</label>
+                <input type="search" id="product-search" name="product_search" title="Пошук за назвою">
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Деталі замовлення</legend>
+            
+            <div class="form-row">
+                <div>
+                    <label for="ship-month">Бажаний місяць відвантаження:</label>
+                    <input type="month" id="ship-month" name="ship_month">
+                </div>
+                <div>
+                    <label for="order-date">Дата/час замовлення:</label>
+                    <input type="datetime-local" id="order-date" name="order_date">
+                </div>
+            </div>
+
+            <div>
+                <label for="notes">Коментарі до замовлення:</label>
+                <textarea id="notes" name="order_notes" placeholder="Введіть особливі вимоги..." wrap="soft" required
+                          title="Поле не може бути порожнім"></textarea>
+            </div>
+            
+            <div>
+                <label for="shipment-method">Вибір способу доставки:</label>
+                <select id="shipment-method" name="shipment_method">
+                    <optgroup label="Наземна доставка" id="land-options" lang="uk" title="Способи, що використовують наземний транспорт">
+                        <option value="truck">Автомобільний транспорт</option>
+                    </optgroup>
+                    <optgroup label="Повітряна доставка">
+                        <option value="air">Авіа</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+             <div style="margin-top: 15px;">
+                Кількість введених символів: <output name="char-count" title="Кількість символів у коментарі" lang="uk" class="output-style" for="notes">0</output>
+            </div>
+        </fieldset>
+
+        <fieldset>
+             <legend>Спеціальні опції</legend>
+             
+             <div>
+                <label for="corp-color">Вибір корпоративного кольору:</label>
+                <input type="color" id="corp-color" name="corp_color">
+             </div>
+             
+             <div>
+                 <label>Логотип (кнопка):</label>
+                 <input type="image" src="placeholder.png" alt="Відправити логотипом" 
+                        formaction="/submit-alt" formtarget="_blank">
+             </div>
+
+             <button type="submit" autofocus formenctype="text/plain" name="alternative_submit" formtarget="_self">
+                 Надіслати як текст
+             </button>
+             
+             <input type="reset" value="Скинути форму">
+
+             <div style="margin-top: 15px;">
+                 <label>Генерація ключа:</label>
+                 <keygen name="security_key" disabled lang="en" style="border: 1px dashed red;" title="Генератор ключа безпеки">
+             </div>
+
+        </fieldset>
+
+        <input type="submit" value="Відправити інформацію"/>
+        
+    </form>
+
+    <script>
+        // Невеликий скрипт для демонстрації роботи 'for' в <output>
+        const notes = document.getElementById('notes');
+        const output = document.querySelector('output[for="notes"]');
+        
+        if (notes && output) {
+            notes.addEventListener('input', () => {
+                output.value = notes.value.length;
+            });
+            // Ініціалізація початкового значення
+            output.value = notes.value.length;
+        }
+    </script>
+
+</body>
+</html>
