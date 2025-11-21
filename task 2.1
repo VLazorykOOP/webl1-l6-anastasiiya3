@@ -1,81 +1,249 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Про фірму - Б'юті Експерт</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Б'юті Експерт</h1>
-            <nav class="navigation">
-                <a href="about_author.html">Про автора</a>
-                <a href="company.html">Про фірму</a>
-                <a href="news.html">Новини</a>
-            </nav>
-            <div class="absolute-box">Акція!</div>
-        </header>
+/* Універсальний селектор */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        <main class="main-content">
-            <section class="hero-section">
-                <h2>Про нашу компанію</h2>
-                <p><strong>Б'юті Експерт</strong> - інноваційна компанія у сфері косметології</p>
-            </section>
+/* Селектор класу */
+.page-header {
+    background-color: #f0f8ff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #4682b4;
+}
 
-            <!-- Вкладені блоки -->
-            <div class="nested-level-1">
-                <h3>Наша структура</h3>
-                <div class="nested-level-2">
-                    <h4>Відділ досліджень</h4>
-                    <div class="nested-level-3">
-                        <p>Наукові дослідження</p>
-                        <div class="nested-level-4">
-                            <span class="marker-style">Інновації</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="nested-level-2">
-                    <h4>Відділ продажів</h4>
-                    <div class="nested-level-3">
-                        <p>Клієнтський сервіс</p>
-                    </div>
-                </div>
-            </div>
+/* Селектор сусідів */
+h1 + p {
+    font-style: italic;
+    color: #666;
+}
 
-            <div class="content-block">
-                <div class="table-container">
-                    <table class="data-table">
-                        <tr class="table-row">
-                            <th>Вид продукції</th>
-                            <th>Марка</th>
-                            <th>Виробник</th>
-                        </tr>
-                        <tr class="table-row">
-                            <td>Натуральна косметика</td>
-                            <td>Organic Beauty</td>
-                            <td>Україна</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+/* Дочірній селектор */
+nav > ul {
+    list-style-type: none;
+    background-color: #333;
+    padding: 10px;
+}
 
-            <aside class="sidebar">
-                <h3>Наші переваги:</h3>
-                <ul>
-                    <li>✅ Натуральні компоненти</li>
-                    <li>✅ Клінічно перевірена ефективність</li>
-                </ul>
-            </aside>
+/* Селектор атрибутів [attr] */
+a[class] {
+    text-decoration: none;
+}
 
-            <div class="hidden-element">Прихований контент</div>
-            <div></div> <!-- Порожній елемент -->
-        </main>
+/* Селектор атрибутів [attr*=value] */
+a[class*="link"] {
+    padding: 5px 10px;
+    display: inline-block;
+}
 
-        <footer class="footer-group">
-            <p>&copy; 2025 Б'юті Експерт. Всі права захищені.</p>
-        </footer>
-    </div>
-</body>
-</html>
+/* Селектор атрибутів [attr=value] */
+a[class="external"] {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* Псевдоклас :first-child */
+.child-demo li:first-child {
+    font-weight: bold;
+    color: #2e8b57;
+}
+
+/* Псевдоклас :last-child */
+.child-demo li:last-child {
+    font-weight: bold;
+    color: #dc143c;
+}
+
+/* Псевдоклас :active */
+.nav-link:active {
+    background-color: #ffd700 !important; /* Використання !important */
+}
+
+/* Псевдоклас :empty */
+p:empty {
+    height: 20px;
+    background-color: #f5f5f5;
+    border: 1px dashed #ccc;
+}
+
+/* Псевдоклас :link */
+.nav-link:link {
+    color: #fff;
+}
+
+/* Псевдоклас :not(selector) */
+.section-box:not(.first-section) {
+    margin-top: 30px;
+}
+
+/* Псевдоклас :checked */
+input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label {
+    color: #228b22;
+    font-weight: bold;
+}
+
+/* Псевдоелемент ::first-line */
+.intro::first-line {
+    font-variant: small-caps;
+    color: #2f4f4f;
+}
+
+/* Псевдоелемент ::first-letter */
+.intro::first-letter {
+    font-size: 200%;
+    color: #8b0000;
+    float: left;
+    line-height: 1;
+    margin-right: 5px;
+}
+
+/* Margin властивості */
+.content {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.section-box {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Padding властивості */
+.section-box {
+    padding: 20px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-left: 25px;
+}
+
+/* Border властивості */
+.section-box {
+    border-width: 2px;
+    border-color: #4682b4;
+    border-style: solid;
+}
+
+.first-section {
+    border-left-width: thin;
+    border-left-style: dashed;
+    border-right-width: 5px;
+    border-right-style: double;
+    border-top-style: hidden;
+}
+
+.last-section {
+    border-bottom-color: #dc143c;
+    border-top-color: #2e8b57;
+}
+
+/* Display властивості */
+nav li {
+    display: inline;
+}
+
+.float-left, .float-right {
+    display: inline-block;
+}
+
+/* Position властивості */
+.position-demo {
+    position: relative;
+    height: 150px;
+    margin: 20px 0;
+}
+
+.static-box {
+    position: static;
+    background-color: #f0f0f0;
+}
+
+.absolute-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ffebcd;
+    z-index: auto;
+}
+
+/* Float та Clear */
+.float-left {
+    float: left;
+    background-color: #e6e6fa;
+}
+
+.float-right {
+    float: right;
+    background-color: #fff0f5;
+}
+
+.clear-both {
+    clear: both;
+    background-color: #f0fff0;
+}
+
+/* Direction та unicode-bidi */
+.page-footer {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+/* Width/Height властивості */
+.overflow-box {
+    max-width: 500px;
+    max-height: 150px;
+    min-height: 100px;
+    overflow: scroll;
+}
+
+/* Line-height та vertical-align */
+.intro {
+    line-height: 1.6;
+}
+
+.vertical-align-demo {
+    vertical-align: middle;
+}
+
+/* Visibility */
+.hidden-element {
+    visibility: hidden;
+}
+
+/* Outline */
+.nav-link:focus {
+    outline: 2px solid #ffa500;
+    outline-style: dashed;
+}
+
+/* Color та Background */
+body {
+    color: #333;
+    background-color: #fafafa;
+    background-image: url('texture.png');
+    background-attachment: scroll;
+    background-position: top;
+}
+
+.section-box {
+    background-color: #fff;
+}
+
+/* Спеціальні стилі для демонстрації */
+.attr-demo p[data-info="important"] {
+    background-color: #fffacd;
+}
+
+.attr-demo p[data-info*="very"] {
+    border-left: 3px solid #ff0000;
+    padding-left: 10px;
+}
+
+.page-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
