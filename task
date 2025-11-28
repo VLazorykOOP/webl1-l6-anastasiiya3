@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Анімація - Лабораторна робота №6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        svg {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Лабораторна робота №6 - SVG Анімація</h1>
+        
+        <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Статичне зображення малюнка (40%) -->
+            <rect x="50" y="50" width="500" height="300" fill="none" stroke="#3498db" stroke-width="2"/>
+            
+            <!-- Координатні осі -->
+            <line x1="50" y1="200" x2="550" y2="200" stroke="#7f8c8d" stroke-width="1"/>
+            <line x1="300" y1="50" x2="300" y2="350" stroke="#7f8c8d" stroke-width="1"/>
+            
+            <!-- Позначення осей -->
+            <text x="560" y="205" font-size="12" fill="#2c3e50">X</text>
+            <text x="295" y="40" font-size="12" fill="#2c3e50">Y</text>
+            
+            <!-- Текст по кривій (10%) -->
+            <path id="textPath" d="M100,250 C200,150 400,150 500,250" fill="none"/>
+            <text font-size="16" fill="#e74c3c">
+                <textPath href="#textPath" startOffset="0%">
+                    Текст по кривій - Лабораторна робота №6
+                </textPath>
+            </text>
+            
+            <!-- Рухомий об'єкт -->
+            <g id="movingObject">
+                <!-- Основний об'єкт, що рухається -->
+                <circle id="mainCircle" cx="100" cy="250" r="20" fill="#3498db">
+                    <!-- Анімація зміни кольору (10%) -->
+                    <animate attributeName="fill" values="#3498db;#e74c3c;#2ecc71;#3498db" dur="4s" repeatCount="indefinite"/>
+                    <!-- Анімація зміни розміру (10%) -->
+                    <animate attributeName="r" values="20;25;15;20" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Додаткові елементи об'єкта -->
+                <line x1="90" y1="250" x2="110" y2="250" stroke="#ffffff" stroke-width="2"/>
+                <line x1="100" y1="240" x2="100" y2="260" stroke="#ffffff" stroke-width="2"/>
+                
+                <!-- Анімація переміщення по траєкторії (10%) -->
+                <animateMotion dur="8s" repeatCount="indefinite">
+                    <mpath href="#textPath"/>
+                </animateMotion>
+                
+                <!-- Анімація обертання (10%) -->
+                <animateTransform attributeName="transform" type="rotate" values="0 100 250;360 100 250" dur="4s" repeatCount="indefinite"/>
+            </g>
+            
+            <!-- Статичні об'єкти -->
+            <rect x="100" y="100" width="40" height="40" fill="#9b59b6" opacity="0.7"/>
+            <circle cx="450" y="150" r="30" fill="#f39c12" opacity="0.7"/>
+            <polygon points="400,300 450,250 500,300" fill="#1abc9c" opacity="0.7"/>
+        </svg>
+        
+        <div class="description">
+            <h2>Опис анімації:</h2>
+            <ul>
+                <li><strong>Статичне зображення:</strong> Координатна сітка та геометричні фігури</li>
+                <li><strong>Текст по кривій:</strong> Напис "Текст по кривій - Лабораторна робота №6"</li>
+                <li><strong>Динамічні ефекти:</strong>
+                    <ul>
+                        <li>Зміна кольору основного об'єкта (синій → червоний → зелений → синій)</li>
+                        <li>Переміщення об'єкта по кривій траєкторії</li>
+                        <li>Обертання об'єкта навколо власної осі</li>
+                        <li>Зміна розміру об'єкта (20 → 25 → 15 → 20)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
